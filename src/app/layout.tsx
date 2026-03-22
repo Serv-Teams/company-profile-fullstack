@@ -6,6 +6,7 @@ import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import theme from '@/theme';
 import ModeSwitch from '@/components/ModeSwitch';
 import Header from './_components/Header';
+import Footer from './_components/Footer';
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -23,6 +24,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             <Header />
             {/* <ModeSwitch /> */}
             {props.children}
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
