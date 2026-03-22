@@ -1,32 +1,14 @@
-"use client";
 
 import { Container } from "@mui/material";
-import { useState } from "react";
 
-export const metadata = {
-    title: "Kontak Kami - Serv Company Profile",
-    description: "Hubungi Serv Company Profile",
-};
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Serv - Company Profile | Kontak Kami',
+    description: 'Informasi kontak untuk Serv Company Profile.',
+}
 
 export default function KontakPage() {
-    const [form, setForm] = useState({
-        nama: "",
-        email: "",
-        pesan: "",
-    });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-
-        alert("Pesan berhasil dikirim (dummy).");
-    };
 
     return (
         <Container
@@ -37,8 +19,7 @@ export default function KontakPage() {
             <h1 className="text-3xl font-bold mb-6">Kontak Kami</h1>
 
             <p className="mb-4">
-                Jika Anda memiliki pertanyaan, silakan hubungi kami melalui form di bawah
-                atau email berikut:
+                Jika Anda memiliki pertanyaan, silakan hubungi kami melalui email berikut:
             </p>
 
             <p className="mb-6 font-semibold">

@@ -1,10 +1,11 @@
 import { Container } from "@mui/material";
 
-export const metadata = {
-    title: "Tentang Kami - Serv Company Profile",
-    description: "Informasi tentang Serv Company Profile",
-};
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+    title: 'Serv - Company Profile | Tentang Kami',
+    description: 'Informasi tentang Serv Company Profile',
+}
 export default function TentangKamiPage() {
     return (
         <Container

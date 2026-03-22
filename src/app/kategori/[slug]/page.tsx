@@ -4,6 +4,38 @@ import { ObjectId } from "mongodb";
 import { getCategory } from "../_actions/Category"
 import { getProfiles } from "./_actions/Profile";
 
+
+import type { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+    params: Promise<{ slug: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const slug = (await params).slug
+
+    const db = client.db("company");
+
+    const category = await db.collection("categories").findOne({ slug });
+
+    if (!category) {
+        return {
+            title: `Serv - Company Profile | ${slug}`,
+            description: `Kategori ${slug} tidak ditemukan di Serv Company Profile.`,
+        }
+    }
+
+    return {
+        title: `Serv - Company Profile | ${category.name}`,
+        description: `Jelajahi berbagai perusahaan dalam kategori ${category.name} di Serv Company Profile. Temukan informasi lengkap tentang perusahaan-perusahaan di kategori ini untuk membantu Anda dalam mencari mitra bisnis atau peluang kerja.`,
+    }
+}
+
+
 export default async function Page({
     params,
 }: {

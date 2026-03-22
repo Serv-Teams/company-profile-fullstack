@@ -1,10 +1,11 @@
 import { Container } from "@mui/material";
 
-export const metadata = {
-    title: "Kebijakan Privasi - Serv Company Profile",
-    description: "Kebijakan privasi Serv Company Profile",
-};
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+    title: 'Serv - Company Profile | Kebijakan Privasi',
+    description: 'Kebijakan privasi untuk Serv Company Profile.',
+}
 export default function KebijakanPrivasiPage() {
     return (
         <Container

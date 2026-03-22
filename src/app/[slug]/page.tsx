@@ -4,6 +4,29 @@ import { getProfile } from "./_actions/Profile";
 import ProductDetails from "./_components";
 
 
+import type { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+    params: Promise<{ slug: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const slug = (await params).slug
+
+    const rawData = await getProfile(slug);
+    const data = JSON.parse(JSON.stringify(rawData));
+
+    return {
+        title: `Serv - Company Profile | ${data?.name || slug}`,
+        description: data?.description || `Informasi lengkap tentang perusahaan ${data?.name || slug} di Serv Company Profile.`,
+    }
+}
+
+
 export default async function Page({
     params,
 }: {
