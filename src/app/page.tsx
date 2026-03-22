@@ -18,11 +18,15 @@ export default function Home() {
         }}
       >
         <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-          Material UI - Next.js example in TypeScript
+          {/* Material UI - Next.js example in TypeScript */}
+          Selamat datang di halaman utama!
         </Typography>
-        <MaterialUILink component={NextLink} href="/about" color="secondary">
+        {/* <MaterialUILink component={NextLink} href="/about" color="secondary">
           Go to the about page
-        </MaterialUILink>
+        </MaterialUILink> */}
+        <Typography>
+          Silahkan kunjungi halaman kategori untuk melihat daftar perusahaan berdasarkan kategori
+        </Typography>
       </Box>
     </Container>
   );

@@ -10,6 +10,7 @@ import KitchenIcon from '@mui/icons-material/Kitchen';
 import FlashOnIcon from '@mui/icons-material/FlashOn';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import Link from 'next/link';
+import { Container, Typography } from '@mui/material';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#fff',
@@ -24,16 +25,21 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Categories({ categories }: { categories: any[] }) {
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-                {categories.map((category) => (
-                    <Grid key={category._id} size={4}>
-                        <Link href={`/kategori/${category.slug}`}>
-                            <Item>{category.name}</Item>
-                        </Link>
-                    </Grid>
-                ))}
-            </Grid>
-        </Box>
+        <>
+            <Typography variant="h2" gutterBottom>
+                Kategori
+            </Typography>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={2}>
+                    {categories.map((category) => (
+                        <Grid key={category._id} size={4}>
+                            <Link href={`/kategori/${category.slug}`}>
+                                <Item>{category.name}</Item>
+                            </Link>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+        </>
     );
 }

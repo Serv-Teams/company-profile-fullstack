@@ -16,7 +16,7 @@ export default async function Page({
     const category = await db.collection("categories").findOne({ slug });
 
     if (!category) {
-        return <div>Category not found</div>;
+        return <div>Kategori tidak ditemukan</div>;
     }
 
     // 2. Find profiles by categoryId = category._id
@@ -59,7 +59,7 @@ export default async function Page({
             <h2>Perusahaan</h2>
 
             {serializedProfiles.length === 0 ? (
-                <p>No profiles found</p>
+                <p>Tidak ada perusahaan dalam kategori ini.</p>
             ) : (
                 <ul>
                     {serializedProfiles.map((profile: any) => (

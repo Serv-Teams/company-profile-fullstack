@@ -43,12 +43,11 @@ export default function Header() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -59,7 +58,7 @@ export default function Header() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        Serv-Company-Profile
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -89,22 +88,23 @@ export default function Header() {
                             onClose={handleCloseNavMenu}
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
-                            {pages.map((page) => (
+                            {/* {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                                 </MenuItem>
-                            ))}
-                            <MenuItem LinkComponent={Link} href='/kategori' onClick={handleCloseNavMenu}>
-                                <Typography sx={{ textAlign: 'center' }}>Kategori</Typography>
-                            </MenuItem>
+                            ))} */}
+                            <Link href='/kategori' onClick={handleCloseNavMenu} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <MenuItem>
+                                    <Typography sx={{ textAlign: 'center' }}>Kategori</Typography>
+                                </MenuItem>
+                            </Link>
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -116,10 +116,10 @@ export default function Header() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        Serv-Company-Profile
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                        {/* {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
@@ -127,7 +127,7 @@ export default function Header() {
                             >
                                 {page}
                             </Button>
-                        ))}
+                        ))} */}
                         <Button
                             href='/kategori'
                             onClick={handleCloseNavMenu}

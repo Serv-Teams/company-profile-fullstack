@@ -22,17 +22,18 @@ export default function ModeSwitch() {
             }}
         >
             <FormControl>
-                <InputLabel id="mode-select-label">Theme</InputLabel>
+                <InputLabel id="mode-select-label">Tema</InputLabel>
                 <Select
                     labelId="mode-select-label"
                     id="mode-select"
                     value={mode}
                     onChange={(event) => setMode(event.target.value as typeof mode)}
                     label="Theme"
+                    size='small'
                 >
-                    <MenuItem value="system">System</MenuItem>
-                    <MenuItem value="light">Light</MenuItem>
-                    <MenuItem value="dark">Dark</MenuItem>
+                    <MenuItem value="system">Sistem</MenuItem>
+                    <MenuItem value="light">Terang</MenuItem>
+                    <MenuItem value="dark">Gelap</MenuItem>
                 </Select>
             </FormControl>
         </Box>
