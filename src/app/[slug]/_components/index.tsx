@@ -24,6 +24,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Link from "next/link";
 import { Facebook, Instagram, Public } from "@mui/icons-material";
 import { blue, pink } from "@mui/material/colors";
+import CloudinaryImage from "./cloudinary";
 
 // const images = [
 //     "https://images.unsplash.com/photo-1608231387042-66d1773070a5",
@@ -44,23 +45,27 @@ export default function ProductDetails({ data }: { data: any; }) {
 
                 {/* PRODUCT IMAGES */}
                 <Grid size={{ xs: 12, md: 6 }}>
-                    <Card>
-                        <CardMedia
+                    {/* <Card> */}
+                    {/* <CardMedia
                             component="img"
                             height="480"
                             image={image}
-                        />
-                    </Card>
+                        /> */}
+                    {/* </Card> */}
+                    <CloudinaryImage width="480" height="480" src={image} />
 
                     <Stack direction="row" spacing={2} mt={2}>
                         {data.product_images.map((img: any) => (
-                            <Avatar
-                                key={img}
-                                src={img}
-                                variant="rounded"
-                                sx={{ width: 70, height: 70, cursor: "pointer" }}
-                                onClick={() => setImage(img)}
-                            />
+                            // <Avatar
+                            //     key={img}
+                            //     src={img}
+                            //     variant="rounded"
+                            //     sx={{ width: 70, height: 70, cursor: "pointer" }}
+                            //     onClick={() => setImage(img)}
+                            // />
+                            <button key={img} onClick={() => setImage(img)} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+                                <CloudinaryImage src={img} width="70" height="70" />
+                            </button>
                         ))}
                     </Stack>
                 </Grid>
