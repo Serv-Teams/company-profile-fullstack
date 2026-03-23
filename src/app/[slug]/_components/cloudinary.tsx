@@ -8,7 +8,7 @@ export default function CloudinaryImage({ src, width, height }: { src: string; w
             width={width}
             height={height}
             src={src}
-            // sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             alt={src}
         />
     );
