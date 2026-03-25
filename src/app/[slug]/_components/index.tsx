@@ -99,13 +99,13 @@ export default function ProductDetails({ data }: { data: any; }) {
                         <Stack direction="row" spacing={2} mt={1}>
                             <Link href={data.online_shops.tokopedia} target="_blank">
                                 <Avatar sx={{
-                                    bgcolor: "blue",
+                                    bgcolor: "green",
                                     // width: 30, height: 30 
                                 }} src="/tokopedia.png" />
                             </Link>
                             <Link href={data.online_shops.shopee} target="_blank">
                                 <Avatar sx={{
-                                    bgcolor: "pink",
+                                    bgcolor: "orange",
                                     // width: 30, height: 30
                                 }} src="/shopee.png" />
                             </Link>
@@ -125,6 +125,13 @@ export default function ProductDetails({ data }: { data: any; }) {
                                         <Avatar sx={{ bgcolor: pink[500] }}>
                                             <Instagram />
                                         </Avatar>
+                                    </Link>
+                                )
+                            }
+                            {
+                                data.social_medias.tiktok === "" ? null : (
+                                    <Link href={data.social_medias.tiktok} target="_blank">
+                                        <Avatar sx={{ bgcolor: "white" }} src="/tiktok.png" />
                                     </Link>
                                 )
                             }
