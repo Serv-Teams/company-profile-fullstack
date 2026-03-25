@@ -22,7 +22,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Link from "next/link";
-import { Facebook, Instagram, Public } from "@mui/icons-material";
+import { Instagram, Public } from "@mui/icons-material";
 import { blue, pink } from "@mui/material/colors";
 import CloudinaryImage from "./cloudinary";
 
@@ -132,15 +132,6 @@ export default function ProductDetails({ data }: { data: any; }) {
                                 data.social_medias.tiktok === "" ? null : (
                                     <Link href={data.social_medias.tiktok} target="_blank">
                                         <Avatar sx={{ bgcolor: "white" }} src="/tiktok.png" />
-                                    </Link>
-                                )
-                            }
-                            {
-                                data.social_medias.facebook === "" ? null : (
-                                    <Link href={data.social_medias.facebook} target="_blank">
-                                        <Avatar sx={{ bgcolor: blue[500] }}>
-                                            <Facebook />
-                                        </Avatar>
                                     </Link>
                                 )
                             }
